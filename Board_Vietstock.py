@@ -5,9 +5,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 
-# Khởi tạo trình duyệt (ở đây dùng Chrome)
+
 options = webdriver.ChromeOptions()
-options.add_argument('--headless')  # Chạy ngầm (headless)
+options.add_argument('--headless') 
 driver = webdriver.Chrome(options=options)
 
 data = []
@@ -184,7 +184,6 @@ print("Đã hoàn thành việc lấy dữ liệu cho các mã chứng khoán tr
 print("-----------------------------------------------------------------------------")
 print()
 
-# Đóng trình duyệt
 driver.quit()
 
 df = pd.DataFrame(data)

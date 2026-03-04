@@ -6,8 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import pandas as pd
 
-# 1. Khởi tạo trình duyệt (Ở đây mình dùng Chrome)
-# Bạn có thể thêm các tùy chọn (options) để chạy ngầm (headless) nếu không muốn trình duyệt bật lên màn hình
+# Khởi tạo trình duyệt
 options = webdriver.ChromeOptions()
 options.add_argument('--headless') # Bỏ dấu # ở đầu dòng này nếu muốn chạy ngầm
 driver = webdriver.Chrome(options=options)
@@ -22,12 +21,9 @@ for ticker in tickers_hose:
         try:
             url = f'https://cafef.vn/du-lieu/hose/{ticker}-ban-lanh-dao-so-huu.chn'
             driver.get(url)
-                # 3. Đợi một chút để JavaScript tải xong dữ liệu (Rất quan trọng!)
-                # nhưng trong thực tế người ta hay dùng WebDriverWait (chờ thông minh)
+
             wait = WebDriverWait(driver, 30)
-                # 4. Tìm phần tử và lấy dữ liệu
-                # Ví dụ: Lấy nội dung của câu trích dẫn đầu tiên trên trang
-                # Cú pháp tìm kiếm của Selenium 4 sử dụng By
+
             name_element = wait.until(
                 EC.visibility_of_element_located((By.CLASS_NAME, "directorandonwer_name-top"))
             )
@@ -71,9 +67,6 @@ for ticker in tickers_hnx:
             url = f'https://cafef.vn/du-lieu/hnx/{ticker}-ban-lanh-dao-so-huu.chn'
             driver.get(url)
                 
-                # 3. Đợi một chút để JavaScript tải xong dữ liệu (Rất quan trọng!)
-                # Cách đơn giản nhất là dùng time.sleep(), 
-                # nhưng trong thực tế người ta hay dùng WebDriverWait (chờ thông minh)
             wait = WebDriverWait(driver, 30)
 
             name_element = wait.until(
@@ -118,9 +111,6 @@ for ticker in tickers_upcom:
             url = f'https://cafef.vn/du-lieu/upcom/{ticker}-ban-lanh-dao-so-huu.chn'
             driver.get(url)
                 
-                # 3. Đợi một chút để JavaScript tải xong dữ liệu (Rất quan trọng!)
-                # Cách đơn giản nhất là dùng time.sleep(), 
-                # nhưng trong thực tế người ta hay dùng WebDriverWait (chờ thông minh)
             wait = WebDriverWait(driver, 30)
 
             name_element = wait.until(
