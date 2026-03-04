@@ -1,0 +1,74 @@
+# Các tham số cấu hình cho việc lấy mã chứng khoán
+tickers:
+  hose:
+    - "FPT"
+    - "PIT"
+    - "HRC"
+    - "PNC"
+    - "PMG"
+    - "ADG"
+    - "UIC"
+    - "DXV"
+    - "PLX"
+    - "MCH"
+    - "SVD"
+    - "SHB"
+    - "TCB"
+    - "MBB"
+    - "HPG"
+    - "VIC"
+  hnx:
+    - "SHS"
+    - "PVS"
+    - "CEO"
+    - "PVC"
+    - "MST"
+    - "MBS"
+    - "IDC"
+    - "TNG"
+    - "LAS"
+    - "HUT"
+    - "HMH"
+    - "HLC"
+    - "NBC"
+    - "TVD"
+    - "ALT"
+    - "TMB"
+    - "THT"
+    - "MEL"
+  upcom:
+    - "A32"
+    - "AAH"
+    - "AAS"
+    - "ABB"
+    - "ABC"
+    - "ABI"
+    - "ABW"
+    - "ACE"
+    - "ACM"
+    - "ACS"
+    - "ACV"
+    - "AG1"
+    - "AGF"
+    - "AGM"
+    - "AGP"
+    - "AGX"
+    - "AIC"
+    - "AIG"
+    - "ALC"
+    - "ALV"
+
+# Cấu hình cho việc xử lý CSRF token 
+csrf_token_selector: "//input[@name='__RequestVerificationToken']"
+
+# Cấu hình Selenium
+selenium:
+  headless: true
+  browser: "chrome"
+  timeout: 30  # Timeout cho mỗi thao tác chờ đợi
+
+# Cấu hình cho việc lưu trữ dữ liệu
+output:
+  format: "parquet"
+  filename: "stock_data_vietstock.parquet"
+  compression: "snappy"
